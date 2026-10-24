@@ -1,0 +1,408 @@
+/* ==========================================================
+   North Star Bakery - styles.css
+   Mobile-first: base styles are for small screens, and the
+   media query near the bottom adds the larger-screen layout.
+   ========================================================== */
+
+/* ---------- Color palette (4 colors) and fonts (2 families) ---------- */
+:root {
+  --brown: #6B4539;     /* headings, header, buttons (from the logo) */
+  --tan: #C49E80;       /* borders and accents (from the logo) */
+  --cream: #FFF8F0;     /* page and form background */
+  --charcoal: #2F2A26;  /* body text and footer */
+
+  --font-heading: Georgia, "Times New Roman", serif;
+  --font-body: Arial, Helvetica, sans-serif;
+}
+
+/* ---------- Base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--cream);
+  color: var(--charcoal);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  line-height: 1.25;
+}
+
+h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: var(--brown);
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: var(--brown);
+}
+
+a {
+  color: var(--brown);
+  font-weight: bold;
+}
+
+a:hover,
+a:focus {
+  color: var(--charcoal);
+  text-decoration-thickness: 3px;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+audio {
+  width: 100%;
+  max-width: 28rem;
+}
+
+/* ---------- Header and navigation (Flexbox) ---------- */
+header {
+  display: flex;
+  flex-direction: column;     /* stacked on phones */
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem 1rem;
+  background-color: var(--brown);
+  color: var(--cream);
+  text-align: center;
+}
+
+header img {
+  width: 110px;
+  background-color: var(--cream);   /* keeps the logo readable on the brown bar */
+  padding: 0.35rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  color: var(--cream);
+}
+
+nav {
+  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  display: block;
+  padding: 0.75rem 1rem;      /* large tap targets */
+  border: 2px solid var(--tan);
+  border-radius: 6px;
+  color: var(--cream);
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus,
+nav a[aria-current="page"] {
+  background-color: var(--cream);
+  color: var(--brown);
+}
+
+/* ---------- Main content (Flexbox) ---------- */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 62rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+main > p {
+  margin: 0;
+}
+
+section {
+  flex: 1 1 100%;
+  padding: 1.25rem;
+  border: 2px solid var(--tan);
+  border-left: 8px solid var(--brown);
+  border-radius: 8px;
+}
+
+section p:last-child,
+section ul:last-child {
+  margin-bottom: 0;
+}
+
+section img,
+section video,
+section figure {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+figcaption {
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+address {
+  font-style: normal;
+}
+
+/* ---------- Form ---------- */
+fieldset {
+  margin: 0 0 1.25rem;
+  padding: 1rem;
+  border: 2px solid var(--tan);
+  border-radius: 8px;
+}
+
+legend {
+  padding: 0 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: var(--brown);
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  max-width: 34rem;
+  margin-top: 0.25rem;
+  padding: 0.6rem;
+  border: 2px solid var(--brown);
+  border-radius: 6px;
+  background-color: var(--cream);
+  color: var(--charcoal);
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus,
+a:focus {
+  outline: 3px solid var(--charcoal);
+  outline-offset: 2px;
+}
+
+button {
+  min-height: 44px;
+  padding: 0.75rem 1.75rem;
+  border: 2px solid var(--brown);
+  border-radius: 6px;
+  background-color: var(--brown);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--charcoal);
+  border-color: var(--charcoal);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  padding: 1.25rem 1rem;
+  background-color: var(--charcoal);
+  color: var(--cream);
+  text-align: center;
+}
+
+footer p {
+  margin: 0.25rem 0;
+}
+
+/* ==========================================================
+   Larger screens (tablet and up): two-column layout
+   ========================================================== */
+@media (min-width: 768px) {
+  header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 1.25rem 2rem;
+    text-align: left;
+  }
+
+  h1 {
+    flex: 1;
+    font-size: 2.25rem;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav ul {
+    flex-direction: row;       /* nav links sit side by side */
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  main {
+    flex-direction: row;       /* sections sit side by side */
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+
+  main > p {
+    flex: 1 1 100%;
+  }
+
+  section {
+    flex: 1 1 calc(50% - 1.5rem);   /* two columns */
+  }
+
+  section.wide {
+    flex-basis: 100%;               /* full-width sections */
+  }
+}
+
+/* ==========================================================
+   Touchstone 4 additions: pre-order list and form feedback
+   ========================================================== */
+:root {
+  --error: #9B1C1C;   /* status color for error text only (dark red, strong contrast on cream) */
+}
+
+h4 {
+  margin: 0 0 0.25rem;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  color: var(--brown);
+}
+
+.product-grid,
+.my-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: 2px solid var(--tan);
+  border-radius: 8px;
+}
+
+.product-card p {
+  margin: 0;
+}
+
+.product-card.in-list {
+  background-color: var(--tan);
+  border-color: var(--brown);
+}
+
+.product-card.in-list h4 {
+  color: var(--charcoal);
+}
+
+.my-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 2px solid var(--tan);
+}
+
+button.secondary {
+  background-color: var(--cream);
+  color: var(--brown);
+}
+
+button.secondary:hover {
+  background-color: var(--brown);
+  color: var(--cream);
+}
+
+button.small {
+  min-height: 36px;
+  padding: 0.35rem 0.9rem;
+}
+
+.error {
+  display: block;
+  min-height: 1.4em;
+  margin-top: 0.25rem;
+  color: var(--error);
+  font-weight: bold;
+}
+
+.error:not(:empty)::before {
+  content: "\26A0  ";   /* warning sign, so errors do not rely on color alone */
+}
+
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: var(--error);
+  border-width: 3px;
+}
+
+.success {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--brown);
+  border-radius: 8px;
+  background-color: var(--tan);
+  color: var(--charcoal);
+  font-weight: bold;
+}
+
+.note {
+  font-style: italic;
+}
+
+@media (min-width: 768px) {
+  .product-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .product-card {
+    flex: 1 1 calc(50% - 0.75rem);
+  }
+}

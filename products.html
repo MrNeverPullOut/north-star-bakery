@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Breads, Pastries and Cakes | North Star Bakery</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<h1>Our Breads, Pastries and Cakes</h1>
+<nav aria-label="Main navigation">
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="products.html" aria-current="page">Our Breads and Pastries</a></li>
+<li><a href="about.html">About North Star Bakery</a></li>
+<li><a href="contact.html">Contact and Pre-Orders</a></li>
+</ul>
+</nav>
+</header>
+<main>
+<p>Everything is baked by hand and sold in store. Prices are approximate ranges, and no online checkout is needed. Send us a pre-order request instead.</p>
+<section>
+<h2>Breads</h2>
+<img src="bakery-bread_c.png" alt="Rustic loaves of seeded and floured sourdough bread behind the glass of a bakery display case" width="500">
+<p>Sourdough, whole wheat, and seeded rye with a crisp crust and soft crumb.</p>
+<p>Price range: $6 to $10 per loaf</p>
+</section>
+<section>
+<h2>Signature Loaf</h2>
+<figure>
+<img src="bakery-signature-loaf_c.png" alt="Round, dark rustic loaf resting on a white checkered cloth" width="500">
+<figcaption>Our Signature Loaf: a hearty, hand-shaped country sourdough baked fresh each morning.</figcaption>
+</figure>
+</section>
+<section>
+<h2>Pastries</h2>
+<p>Croissants, cinnamon rolls, scones, and seasonal fruit danishes.</p>
+<p>Price range: $3 to $6 each</p>
+</section>
+<section>
+<h2>Cakes</h2>
+<p>Custom cakes for birthdays, weddings, and office events. Please order at least 3 days ahead.</p>
+<p>Price range: $35 to $90 depending on size</p>
+</section>
+<section class="wide" id="order-builder">
+<h2>Build Your Pre-Order List</h2>
+<p>Choose the items you would like and we will carry your list over to the pre-order form. Your list is saved on this device, so you can leave and come back to it.</p>
+<noscript><p>Turn on JavaScript to build a pre-order list, or send your request on the <a href="contact.html">contact page</a>.</p></noscript>
+<ul id="product-grid" class="product-grid"></ul>
+<h3>My Pre-Order List</h3>
+<p id="list-status" aria-live="polite"></p>
+<ul id="my-list" class="my-list"></ul>
+<p><button type="button" id="clear-list" class="secondary" hidden>Clear list</button></p>
+<p><a href="contact.html">Continue to the pre-order form</a></p>
+</section>
+<p><a href="contact.html">Ready to order? Send a pre-order request</a></p>
+</main>
+<footer>
+<p>&copy; 2026 North Star Bakery. Baked fresh daily for our neighborhood.</p>
+<p>123 Main Street, Your Town | (555) 555-0123 | hello@northstarbakery.example</p>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
